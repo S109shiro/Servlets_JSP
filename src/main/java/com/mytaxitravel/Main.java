@@ -1,17 +1,15 @@
 package com.mytaxitravel;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.sql.Date;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class Main {
+    static void main(String[] args) {
+        Usuario persona = new Usuario("Juan", "Diaz", "Romero", (byte)14, 182282994, "sebrod@gmail.com", "Femenino", "url.com", "3003367605", Date.valueOf("2004-10-09"), 4.8f, "[]", "2004Sebas!");
+        Crud editar = new Crud();
+
+        //editar.modificarDatosUsuario("Fecha Nacimiento", "2004-10-09", 1);
+        //editar.leerDatosUsuario(1);
+
     }
+
 }

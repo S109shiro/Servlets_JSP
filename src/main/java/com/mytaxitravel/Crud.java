@@ -36,10 +36,10 @@ public class Crud {
     }
 
     // Metodo que consulta todos los registros de la tabla usuario.
-    public void leerDatosUsuario(int nIdentidad){
+    public void leerDatosUsuario(Usuario usuario){
         // Definicion de la salida y query de consulta
         String salida = "ID: %d, Nombre: %s, Primer apellido: %s, Segundo apellido: %s, \nEdad: %d, Numero identificacion: %d, Email: %s, \nSexo: %s, Documento de identidad: %s, Numero de telefono: %s, \nFecha de nacimiento: %s, Calificacion media: %f, Historial de viajes: %s Contraseña: %s\n";
-        String query = "select * from usuario where numero_identificacion = " + nIdentidad;
+        String query = "select * from usuario where numero_identificacion = " + usuario.getNumeroIdentificacion();
         try{
             Connection conexion = ConexionDB.conectar();
             PreparedStatement preparacion = conexion.prepareStatement(query);

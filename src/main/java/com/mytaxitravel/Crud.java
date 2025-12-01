@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Crud {
     // Metodo que crea un registro en la tabla de usuarios pasando parametros al metodo.
-    public void crearUsuario(Usuario persona){
+    public boolean crearUsuario(Usuario persona){
         String query = "insert into usuario (nombre, primer_apellido, segundo_apellido, edad, numero_identificacion, email, sexo, documento_identidad, numero_telefono, fecha_nacimiento, calificacion_media, historial_viajes, contrasena) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             Connection conexion = ConexionDB.conectar();
@@ -32,9 +32,11 @@ public class Crud {
             while (obtenerId.next()){
                 System.out.println(String.format("Datos Insertados con el ID: %d \n", obtenerId.getInt("id_usuario")));
             }
+            return true;
         }catch (SQLException ex){
             System.err.println("Error al insertar datos");
             ex.printStackTrace();
+            return false;
         }
     }
 

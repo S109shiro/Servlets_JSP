@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -45,8 +46,16 @@ public class ServletUsuario extends HttpServlet {
         Usuario user = new Usuario(nombre,primerApellido,segundoApellido,Byte.parseByte(edad),Integer.parseInt(numeroIdentificacion),email,sexo,documentoIdentidad,numeroTelefono, Date.valueOf(fechaNacimiento),0.0f,"[]", contrasena);
 
         Crud modificar = new Crud();
+        PrintWriter out = resp.getWriter();
 
-        modificar.crearUsuario(user);
+
+        if(modificar.crearUsuario(user)){
+
+            out.println("Usuario creado");
+        }else{
+            out.println("Usuario no creado. Verificar datos");
+        }
+
 
 
 

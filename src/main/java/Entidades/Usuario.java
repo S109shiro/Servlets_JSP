@@ -1,4 +1,4 @@
-package com.mytaxitravel;
+package Entidades;
 
 import java.sql.*;
 

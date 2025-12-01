@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         id="WebApp_ID" version="6.0">
+
+    <display-name>Servlets_JSP</display-name>
+
+
+    <!-- Configuración del servlet para agregar archivos (Nombre y paquete)-->
+    <servlet>
+        <servlet-name>ServletUsuario</servlet-name>
+        <servlet-class>servlets.ServletUsuario</servlet-class>
+    </servlet>
+
+    <!--Nombre y como va a aparecer en la url-->
+    <servlet-mapping>
+        <servlet-name>ServletUsuario</servlet-name>
+        <url-pattern>/ServletUsuario</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

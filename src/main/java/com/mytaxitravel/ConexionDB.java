@@ -12,10 +12,14 @@ public class ConexionDB {
     public static Connection conectar(){
         Connection conexion = null;
         try{
+            // Envocacion del driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(url, user, pass);
 
         }catch (SQLException e){
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return conexion;
 

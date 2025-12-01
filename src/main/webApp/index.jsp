@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servlet</title>
+    <title>Servlet - Crear Usuario</title>
 </head>
 <body>
     <h1>Crud Cliente</h1>
@@ -25,5 +25,10 @@
         <p><label>Contraseña: </label><input type="password" name="user_password"></p>
         <button type="submit">Crear Usuario</button>
     </form>
+
+    <form action="ServletUsuario" method="GET">
+        <button type="submit">Mostrar Usuarios</button>
+    </form>
+
 </body>
 </html>

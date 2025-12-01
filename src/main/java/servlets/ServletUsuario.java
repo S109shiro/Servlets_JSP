@@ -8,13 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.ArrayList;
 
-@WebServlet("/")
+@WebServlet("/")  // Ubicacion del servlet con el web.xml
 public class ServletUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Crud crud = new Crud();
+        ArrayList<Usuario> registrosUsuarios = crud.listarUsuarios();
+
+        req.setAttribute("listaUsuarios", registrosUsuarios);
+
+        req.getRequestDispatcher("mostrarUsuarios.jsp").forward(req, resp);
 
     }
 

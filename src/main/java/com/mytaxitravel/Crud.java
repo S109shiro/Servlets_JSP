@@ -3,6 +3,7 @@ package com.mytaxitravel;
 import Entidades.Usuario;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Crud {
@@ -149,4 +150,41 @@ public class Crud {
         }
 
     }
+
+
+    // Listar todos los usuarios de la db para el JSP
+    public ArrayList<Usuario> listarUsuarios() {
+        ArrayList<Usuario> lista = new ArrayList<>();
+        String sql = "SELECT * FROM usuario";
+        try {
+            Connection conexion = ConexionDB.conectar();
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Usuario user = new Usuario(
+                        rs.getString("nombre"),
+                        rs.getString("primer_apellido"),
+                        rs.getString("segundo_apellido"),
+                        rs.getByte("edad"),
+                        rs.getInt("numero_identificacion"),
+                        rs.getString("email"),
+                        rs.getString("sexo"),
+                        rs.getString("documento_identidad"),
+                        rs.getString("numero_telefono"),
+                        rs.getDate("fecha_nacimiento"),
+                        rs.getFloat("calificacion_media"),
+                        rs.getString("historial_viajes"),
+                        rs.getString("contrasena")
+                );
+                lista.add(user);
+            } }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
+
+
 }

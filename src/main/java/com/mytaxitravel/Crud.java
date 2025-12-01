@@ -154,7 +154,7 @@ public class Crud {
     }
 
 
-    // Listar todos los usuarios de la db para el JSP
+    // Listar todos los usuarios de la db para el JSP especialmente
     public ArrayList<Usuario> listarUsuarios() {
         ArrayList<Usuario> lista = new ArrayList<>();
         String sql = "SELECT * FROM usuario";

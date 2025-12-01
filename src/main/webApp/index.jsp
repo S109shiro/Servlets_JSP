@@ -23,7 +23,7 @@
         <p><label>Numero de telefono: </label><input type="text" name="user_number_phone"></p>
         <p><label>Fecha Nacimiento: </label><input type="date" name="user_birthday"></p>
         <p><label>Contraseña: </label><input type="password" name="user_password"></p>
-        <button type="submit">Crear Usuario</button>
+        <button type="submit">Crear un nuevo usuario</button>
     </form>
 
     <form action="ServletUsuario" method="GET">

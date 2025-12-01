@@ -12,7 +12,7 @@ public class ConexionDB {
     public static Connection conectar(){
         Connection conexion = null;
         try{
-            // Envocacion del driver
+            // Envocacion del driver para que funcione el TomCat
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(url, user, pass);
 

@@ -41,8 +41,6 @@ public class ServletUsuario extends HttpServlet {
         String fechaNacimiento = req.getParameter("user_birthday");
         String contrasena = req.getParameter("user_password");
 
-        System.out.println(fechaNacimiento);
-
         Usuario user = new Usuario(nombre,primerApellido,segundoApellido,Byte.parseByte(edad),Integer.parseInt(numeroIdentificacion),email,sexo,documentoIdentidad,numeroTelefono, Date.valueOf(fechaNacimiento),0.0f,"[]", contrasena);
 
         Crud modificar = new Crud();
